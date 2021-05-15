@@ -1,4 +1,4 @@
-package Utils
+package utils
 
 import org.apache.spark.sql.functions.{asc, avg, col, desc, regexp_replace}
 import org.apache.spark.sql.types.DoubleType
@@ -17,7 +17,6 @@ object Utils {
       .withColumn("Sentiment_Subjectivity", col("Sentiment_Subjectivity").cast(DoubleType))
       .groupBy("App").agg(avg("Sentiment_Polarity").as("Average_Sentiment_Polarity"))
       .orderBy("App")
-      //.where(col("App") === "Clash of Clans")
       .select("App", "Average_Sentiment_Polarity")
 
     dfAveragePolatiry

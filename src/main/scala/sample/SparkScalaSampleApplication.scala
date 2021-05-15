@@ -1,6 +1,6 @@
 package sample
 
-import Utils.Utils
+import utils.Utils
 import org.apache.spark.sql.SparkSession
 
 object SparkScalaSampleApplication {
